@@ -1,0 +1,64 @@
+.header{
+  padding:40px 2px;
+  border-bottom: 1px solid grey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  margin-left: 0px ;
+  color: blue;
+  font-family: Ubuntu;
+  font-size: 3rem;
+  font-size: 1.5rem;
+}
+.links{
+  display: block;
+  margin-bottom: 40px;
+  color: blue;
+  padding-left: 10px ;
+  font-size: 1.5rem;
+  transition: background 0.5s ease ;
+  text-decoration: none;
+}
+
+.activeLink{
+  background: blue;
+  color: white;
+  background: lightgrey;
+  padding: 20px;
+  border-radius: 8px ;
+}
+
+.link:hover{
+  background: lightgrey;
+  padding: 20px;
+  border-radius: 8px ;
+}
+.link::active {
+  background:blue;
+  color: white;
+  padding:20px; 
+  
+}
+
+span {
+  margin-left: 20px;
+  color: grey;
+  font-weight: 700;
+}
+
+.lead{
+  color: grey;
+  font-weight: 400;
+  margin-top : 30px; 
+  font-family: Ubuntu;
+  font-size: 1.5rem;
+}
+
+.close-btn {
+  border: none;
+  background: transparent;
+  font-size: 120%;
+}

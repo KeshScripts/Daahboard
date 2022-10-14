@@ -1,0 +1,35 @@
+
+  .btn-wrapper {
+  position: fixed;
+  bottom : 40px;
+  right : 20px;
+  padding: 50px 30px;
+}
+
+.sidebar {
+  position: fixed;
+  overflow: auto;
+  padding-left: 20px;
+  padding-right: 10px;
+  width: 300px;
+  background: #e8e8e8d2;
+  height: 100%;
+}
+
+.closed {
+  display: none;
+  width: 0;
+}
+.Nav-container{
+  padding:40px 30px;
+}
+.navContainer2{
+  padding:40px 30px;
+}
+
+@media screen and (min-width:900px){
+   .navContainer2 {
+     position : fixed;
+     left: 320px;
+   }
+}
