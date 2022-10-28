@@ -1,3 +1,4 @@
+
 .header{
   padding:40px 2px;
   border-bottom: 1px solid grey;
@@ -7,14 +8,17 @@
 }
 
 .logo {
+  display :flex;
+  gap: 10px;
   margin-left: 0px ;
   color: blue;
   font-family: Ubuntu;
   font-size: 3rem;
   font-size: 1.5rem;
 }
-.links{
+.link{
   display: block;
+  margin-right:10px ;
   margin-bottom: 40px;
   color: blue;
   padding-left: 10px ;
@@ -40,9 +44,7 @@
   background:blue;
   color: white;
   padding:20px; 
-  
-}
-
+}  
 span {
   margin-left: 20px;
   color: grey;

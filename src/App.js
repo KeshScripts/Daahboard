@@ -45,7 +45,9 @@ function App() {
     isActive,
     setIsActive,
     screenSize,
-    setScreenSize
+    setScreenSize,
+    ThemeSettings,
+   setThemeSettings
   } = useStateContext()
 
   useEffect(() => {
@@ -69,30 +71,31 @@ function App() {
   return (
     <div className="app">
     <BrowserRouter>
-        <div className="btn-wrapper">
-          <Button className="settimgsButton"
-      pos="TopCenter"
-      title="Settings"
-      color="white"
-      dotcolor="blue"
-      fn={() => { return; } }
-      icon={ <FiSettings /> }
+     <div className="btn-wrapper">
+       <Button className="settimgsButton"
+         pos="TopCenter"
+         title="Settings"
+         color="white"
+         dotcolor="blue"
+         fn={() => setThemeSettings(true)}
+         icon={ <FiSettings /> }
       />
     </div>
-    <div className={`${isActive ? "sidebar": "closed"}`}>
+    <div className={`${isActive ? "z-30 sidebar": "closed"}`}>
      <Sidebar />
     </div>
     <div className={isActive ? "navContainer2": "Nav-container"}>
       <Navbar />
-      {/* Toites will go here*/}
+      {/* Roites will go here*/}
       <div>
-     <Routes>
-          {/* Dashboard  */}
+      {ThemeSettings && (<ThemeSettings />)}
+       <Routes>
+          {/* Routes */}
         <Route path="/" element={<Ecommerce />} />
         <Route path="/ecommerce" element={(<Ecommerce />)} />
                  {/*  pages */}
         <Route path="/orders" element={<Orders />} />
-        <Route path="/employees" element={<employees />} />
+        <Route path="/employees" element={<Employees />} />
        <Route path="/customers" element={<Customers />} />
              {/* apps  */}
         <Route path="/kanban" element={<Kanban />} />

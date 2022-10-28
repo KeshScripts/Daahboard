@@ -1,45 +1,62 @@
-import React, {useState, useContext, createContext} from  "react"
+import React, {
+  useState,
+  useContext,
+  createContext
+} from "react"
 
 const StateContext = createContext()
 
 const menuState = {
-  cart : false,
-  chat : false,
-  Notification : false,
+  cart: false,
+  chat: false,
+  Notification: false,
   UserProfile: false
 }
 
-const ContextProvider = ({children}) => {
-  
-  const [screenSize, setScreenSize] = useState(undefined)
-  const [isActive, setIsActive] =  useState(true);
-  const [themeSettings, setThemeSettings] = useState(false)
-  const [mode, setMode] = useState("Light")
-  const [currentColor, setCurrentColor] = useState( "blue" )
-  const [isClicked, setIsClicked] = useState(menuState);
+const ContextProvider = ({
+  children
+}) => {
+
+  const [screenSize,
+    setScreenSize] = useState(undefined)
+  const [isActive,
+    setIsActive] = useState(true);
+  const [ThemeSettings,
+    setThemeSettings] = useState(false)
+  const [mode,
+    setMode] = useState("Light")
+  const [currentColor, 
+    setCurrentColor] = useState("skyblue")
+  const [isClicked,
+    setIsClicked] = useState(menuState);
 
 
- function handleClick(clicked) {
-   setIsClicked({...menuState, [clicked]: true})
- }
-
-const changeMode =(event) => {
-    const value = event.target.value
-    setMode(value)
-    localStorage.setItem("mode", value )
+  function handleClick(clicked) {
+    setIsClicked({
+      ...menuState, [clicked]: true
+    })
   }
-  
-const changeColor = (color) => {
+
+  const changeMode = (e) => {
+    setMode(e.target.value)
+    localStorage.setItem("mode", e.target.value)
+  }
+
+  const changeColor = (color) => {
     setCurrentColor(color)
-    localStorage( "color": color )
- } 
+    localStorage.setItem("color", color)
+    setThemeSettings(false)
+  }
   return (
-   <StateContext.Provider  value={{ isClicked, isActive, setIsActive, mode,setMode,setIsClicked,currentColor,setCurrentColor, setScreenSize, screenSize, themeSettings, setThemeSettings, changeMode, changeColor }}>
+    <StateContext.Provider value= {{ isClicked, isActive, setIsActive, mode, setMode, setIsClicked, currentColor, setCurrentColor, setScreenSize, screenSize, ThemeSettings, setThemeSettings, changeMode, changeColor }}>
       {children}
   </StateContext.Provider>
-)} 
+  )}
 
-const useStateContext = () => useContext(StateContext) 
+const useStateContext = () => useContext(StateContext)
 
 
-export {useStateContext, ContextProvider}
+export {
+  useStateContext,
+  ContextProvider
+}

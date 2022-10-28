@@ -20,9 +20,9 @@ const Sidebar = () => {
 }
  
   return (
-    <div>
-      <div className = "header">
-        <span className="logo"> <FiSettings/> GoFlexShop</span>
+    <div className="py-4">
+      <div className = "header justify-between items-center gap-3">
+        <span className="h-12 logo"> <FiSettings/> GoFlexShop</span>
         
       {/* cancel Botton X for closing our sidebar*/}
         <Button 
@@ -45,14 +45,14 @@ const Sidebar = () => {
           
           {/* loop through title and create a Heading for our list  */}
              
-           <p key={header.title} className="lead"> {header.title.toUpperCase()} </p>
+           <p key={header.title} className="py-3 mb-3  lead"> {header.title.toUpperCase()} </p>
            
              {/* A subsidiary loop inside of the first loop [each heading title ] to create a clickable link  */}
        
              {header.links.map(link => (
              <NavLink to= {`/${link.name}`}
              key={link.name} 
-             className={({isActive}) => isActive ? "activeLink" :  "links"  }  
+             className="flex gap-3 items-center link"
              > {link.icon}<span>{capitalize(link.name)}</span></NavLink>
            ))}
           </div>
