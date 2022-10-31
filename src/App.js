@@ -46,8 +46,8 @@ function App() {
     setIsActive,
     screenSize,
     setScreenSize,
-    ThemeSettings,
-   setThemeSettings
+    themeSettings,
+    setThemeSettings
   } = useStateContext()
 
   useEffect(() => {
@@ -88,7 +88,7 @@ function App() {
       <Navbar />
       {/* Roites will go here*/}
       <div>
-      {ThemeSettings && (<ThemeSettings />)}
+       { themeSettings ? <ThemeSettings /> : null }
        <Routes>
           {/* Routes */}
         <Route path="/" element={<Ecommerce />} />

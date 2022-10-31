@@ -21,7 +21,7 @@ const ContextProvider = ({
     setScreenSize] = useState(undefined)
   const [isActive,
     setIsActive] = useState(true);
-  const [ThemeSettings,
+  const [themeSettings,
     setThemeSettings] = useState(false)
   const [mode,
     setMode] = useState("Light")
@@ -48,7 +48,7 @@ const ContextProvider = ({
     setThemeSettings(false)
   }
   return (
-    <StateContext.Provider value= {{ isClicked, isActive, setIsActive, mode, setMode, setIsClicked, currentColor, setCurrentColor, setScreenSize, screenSize, ThemeSettings, setThemeSettings, changeMode, changeColor }}>
+    <StateContext.Provider value= {{ isClicked, isActive, setIsActive, mode, setMode, setIsClicked, currentColor, setCurrentColor, setScreenSize, screenSize, themeSettings, setThemeSettings, changeMode, changeColor }}>
       {children}
   </StateContext.Provider>
   )}
